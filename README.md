@@ -4,11 +4,11 @@
 
 This repository is an example demo application built with Shopware Frontends Framework and Nuxt 3.
 
-**Interactive preview:**
+**Interactive preview:** (this repository)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/shopware/frontends/tree/main/templates/vue-demo-store)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mkucmus/frontends-test/tree/main/templates/vue-demo-store)
 
-**Deploy with Vercel:**
+**Deploy with Vercel:** (the main repository)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fshopware%2Ffrontends%2Ftree%2Fmain%2Ftemplates%2Fvue-demo-store)
 

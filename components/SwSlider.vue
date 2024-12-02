@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { SliderElementConfig } from "@shopware-pwa/composables-next";
-import { useCmsElementConfig } from "#imports";
 import type { Schemas } from "#shopware";
 import {
   computed,
@@ -69,12 +68,12 @@ const emit = defineEmits<{
   (e: "changeSlide", index: number): void;
   (e: "changeTab", index: number): void;
 }>();
-const slider = useTemplateRef("slider");
-const imageSlider = useTemplateRef("imageSlider");
+const slider = useTemplateRef<HTMLElement>("slider");
+const imageSlider = useTemplateRef<HTMLElement>("imageSlider");
 const imageSliderTrackStyle = ref<CSSProperties>();
 const activeSlideIndex = ref<number>(0);
 const speed = ref<number>(300);
-const imageSliderTrack = useTemplateRef("imageSliderTrack");
+const imageSliderTrack = useTemplateRef<HTMLElement>("imageSliderTrack");
 const autoPlayInterval = ref();
 const isReady = ref<boolean>();
 const isSliding = ref<boolean>();
@@ -263,7 +262,7 @@ defineExpose({
         @click="goToTab(index)"
       >
          <ProductCard
-            v-for="product of crossSellCollections[currentTabIndex].products"
+            v-for="product of crossSellCollections?.[currentTabIndex]?.products"
             :key="product.id"
             class="w-[300px]"
             :product="product"

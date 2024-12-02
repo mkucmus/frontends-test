@@ -8,9 +8,9 @@ const getPrice = computed<string>(() => getFormattedPrice(props.value));
 </script>
 
 <template>
-  <p class="flex gap-1">
+  <div class="flex gap-1">
     <slot name="beforePrice" />
     <span>{{ getPrice }}</span>
     <slot name="afterPrice" />
-  </p>
+  </div>
 </template>

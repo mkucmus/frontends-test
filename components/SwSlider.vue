@@ -261,14 +261,6 @@ defineExpose({
         :class="{ active: index === activeTabIndex }"
         @click="goToTab(index)"
       >
-         <ProductCard
-            v-for="product of crossSellCollections?.[currentTabIndex]?.products"
-            :key="product.id"
-            class="w-[300px]"
-            :product="product"
-            :layout-type="getConfigValue('boxLayout')"
-            :display-mode="getConfigValue('displayMode')"
-          />
       </button>
     </div>
     <div class="tab-content">

@@ -108,16 +108,7 @@ const openTooltip = (number: number) => {
     class="sw-product-card group relative max-w-full inline-block bg-white"
     data-testid="product-box"
   >
-    <div class="min-h-20px px-2">
-      <span
-        v-for="option in product?.options"
-        :key="option.id"
-        class="inline-flex items-center rounded-md bg-secondary-50 px-2 py-1 text-xs font-medium text-secondary-600 ring-1 ring-inset ring-secondary-500/10"
-      >
-        {{ option.group.name }}:
-        {{ option.name }}
-      </span>
-    </div>
+    <CrossSellVariantConfigurator v-if="product.id" :product="product" :key="product.id" />
     <div class="px-4 pb-4">
       <div class="flex items-center justify-between">
         <div class="">
@@ -158,7 +149,6 @@ const openTooltip = (number: number) => {
           {{ $t("product.badges.topseller") }}
         </span>
       </div>
-      {{ tooltipConfig }}
       <button
         v-if="getTooltipForNumber(1)"
         class="absolute bg-white border-black border border-3 hover:bg-black hover:text-white text-black text-3xl rounded-full w-14 h-14 flex items-center justify-center"
@@ -166,16 +156,14 @@ const openTooltip = (number: number) => {
         @click.prevent="openTooltip(1)"
       >
         1
-        
       </button>
       <button
         v-if="getTooltipForNumber(2)"
         class="absolute bg-white border-black border border-3 hover:bg-black hover:text-white text-black text-3xl rounded-full w-14 h-14 flex items-center justify-center"
         :style="{ top: `50%`, left: `20%` }"
-       @click.prevent="openTooltip(2)"
+        @click.prevent="openTooltip(2)"
       >
         2
-       
       </button>
       <button
         v-if="getTooltipForNumber(3)"
@@ -184,7 +172,6 @@ const openTooltip = (number: number) => {
         @click.prevent="openTooltip(3)"
       >
         3
-        
       </button>
       <img
         ref="imageElement"
@@ -203,7 +190,7 @@ const openTooltip = (number: number) => {
       />
     </div>
     <SharedModal :controller="tooltipModalController">{{
-          getCurrentTooltip
-        }}</SharedModal>
+      getCurrentTooltip
+    }}</SharedModal>
   </div>
 </template>

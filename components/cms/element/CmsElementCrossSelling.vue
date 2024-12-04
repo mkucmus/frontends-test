@@ -83,7 +83,7 @@ const loadProduct = (product: Schemas["Product"]) => {
           <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
             {{ crossSellProduct.name }}
           </h3>
-          <ProductCardCrossSell :product="crossSellProduct" />
+          <ProductCardCrossSell v-if="crossSellProduct.id" :product="crossSellProduct" :id="crossSellProduct.id" />
         </div>
       </transition>
     </div>
